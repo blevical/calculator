@@ -1,12 +1,27 @@
-.button {
+.buttons {
     display: flex;
     flex-direction: row;
     border: 5px black;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     flex-wrap: wrap;
+    justify-content: right;
 }
 .container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    height: 30px;
+    width: 30px;
+}
+.calculator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+button {
+    background-color: red;
 }
