@@ -1,0 +1,12 @@
+.button {
+    display: flex;
+    flex-direction: row;
+    border: 5px black;
+    width: 100px;
+    height: 100px;
+    flex-wrap: wrap;
+}
+.container {
+    display: flex;
+    justify-content: center;
+}
