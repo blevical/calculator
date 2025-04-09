@@ -19,3 +19,5 @@ const equations = [add, subtract, divide, multiply]
 let operate = function(equations) {
    Math.random(equations)
 }
+
+button.add.EventListener(mouseOver)
