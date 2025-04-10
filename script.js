@@ -14,6 +14,8 @@ const divide = function(a,b) {
     return a % b;
 };
 
+const newDiv = document.getElementById("display")
+
 const button = document.getElementsByClassName("buttons")
 
 const operations = [add, subtract, multiply, divide]
