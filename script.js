@@ -14,6 +14,10 @@ const divide = function(a,b) {
     return a % b;
 };
 
-function operate() {
-    const operations = [add, subtract, divide, multiply]
+const button = document.getElementsByClassName("buttons")
+
+const operations = [add, subtract, multiply, divide]
+
+function operate(a,b) {
+    
 }
