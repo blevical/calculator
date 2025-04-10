@@ -1,25 +1,27 @@
 .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 0fr);
-    gap: 10px;
-    margin: 10px;
-    background-color: black;
+    display: flex;
+    flex-direction: row;
+    border: 5px black;
+    width: 75px;
+    height: 75px;
+    flex-wrap: wrap;
+    justify-content: right;
 }
 .container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     height: 30px;
     width: 30px;
 }
+.calculator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 button {
     background-color: red;
-    height: 30px;
-    width: 30px;
-    color: white;
-}
-
-.display {
-    display: flex;
-    flex-direction: row;
-    border: black 15px;
 }

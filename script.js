@@ -14,10 +14,6 @@ const divide = function(a,b) {
     return a % b;
 };
 
-const equations = [add, subtract, divide, multiply]
-
-let operate = function(equations) {
-   Math.random(equations)
+function operate() {
+    const operations = [add, subtract, divide, multiply]
 }
-
-button.add.EventListener(mouseOver)
