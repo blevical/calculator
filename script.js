@@ -29,8 +29,6 @@ const display = document.getElementById("display")
 const operatorButtons = document.getElementsByClassName("operators")
 const numberButtons = document.getElementsByClassName("numbers")
 
-console.log(button)
-
 function operate(operator,a,b) {
     a = Number(a);
     b = Number(b);
@@ -47,6 +45,7 @@ function operate(operator,a,b) {
             return null;
     }
 }
+
 function numberSelection(numberButtons) {
     Array.from(numberButtons).forEach(button =>{
         const buttonValue = button.textContent;
@@ -62,7 +61,7 @@ function numberSelection(numberButtons) {
 function operatorSelection(operatorButtons) {
     Array.from(operatorButtons).forEach(button => {
         const buttonValue = button.textContent;
-        displayElement.textContent += buttonValue;
+        display.textContent += buttonValue;
             if(display) {
             display.textContent += buttonValue;
         } else {
@@ -71,4 +70,5 @@ function operatorSelection(operatorButtons) {
 });
 }
 
-operate(numbers, add, subtract, multiply, divide);
+console.log(buttonValue)
+console.log(display.textContent)
