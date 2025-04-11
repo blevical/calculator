@@ -17,10 +17,10 @@ const divide = function(a,b) {
     return a / b
 };
 
-function userDisplay(value) {
-    value.add.eventListener("click")
-    displayElement.textContent = value;
-}
+const button = document.getElementById("button")
+const display = document.getElementById("display")
+const operatorButtons = document.getElementsByClassName("operators")
+const numberButtons = document.getElementsByClassName("numbers")
 
 function operate(operator,a,b) {
     a = Number(a);
@@ -37,5 +37,22 @@ function operate(operator,a,b) {
         default:
             return null;
     }
-    if ()
 }
+
+numberButtons.ForEach(button => {
+    const buttonValue = button.textContent;
+    displayElement.textContent += buttonValue;
+})
+
+operatorButtons.ForEach(button => {
+    const buttonValue = button.textContent;
+    displayElement.textContent += buttonValue;
+})
+
+let populateDisplay = function() {
+    button.addEventListener("click", () => {
+        const buttonValue = button.textContent;
+        display.textContent += buttonValue;
+    })
+};
+
