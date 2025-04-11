@@ -17,15 +17,19 @@ const divide = function(a,b) {
     return a / b
 };
 
+const operators = [add,subtract,multiply,divide]
+
 const numbers = [];
 for (let i = 0; i <= 9; i++) {
     numbers.push(i)
 }
 
-const button = document.getElementById("button")
+const button = document.querySelectorAll("button")
 const display = document.getElementById("display")
 const operatorButtons = document.getElementsByClassName("operators")
 const numberButtons = document.getElementsByClassName("numbers")
+
+console.log(button)
 
 function operate(operator,a,b) {
     a = Number(a);
@@ -43,23 +47,26 @@ function operate(operator,a,b) {
             return null;
     }
 }
-
-Array.from(numberButtons).ForEach(button => {
-    const buttonValue = button.textContent;
-    display.textContent += buttonValue;
-    if(display) {
+function numberSelection(numberButtons) {
+    Array.from(numberButtons).forEach(button =>{
+        const buttonValue = button.textContent;
+        display.textContent += buttonValue;
+        if(display) {
         display.textContent += buttonValue;
     } else {
         console.error("Display element not found.");
     }
-    });
+});
+}
 
-Array.from(operatorButtons).ForEach(button => {
-    const buttonValue = button.textContent;
-    displayElement.textContent += buttonValue;
-    if(display) {
-        display.textContent += buttonValue;
-    } else {
+function operatorSelection(operatorButtons) {
+    Array.from(operatorButtons).forEach(button => {
+        const buttonValue = button.textContent;
+        displayElement.textContent += buttonValue;
+            if(display) {
+            display.textContent += buttonValue;
+        } else {
         console.error("Display element not found.");
     }
-    })
+});
+}

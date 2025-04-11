@@ -33,7 +33,7 @@ button {
     justify-content: center;
 }
 
-.display {
+#display {
     padding: 50px;
     border: red 15px;
     display: flex;
