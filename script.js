@@ -70,3 +70,5 @@ function operatorSelection(operatorButtons) {
     }
 });
 }
+
+operate(numbers, add, subtract, multiply, divide);
