@@ -17,6 +17,11 @@ const divide = function(a,b) {
     return a / b
 };
 
+const numbers = [];
+for (let i = 0; i <= 9; i++) {
+    numbers.push(i)
+}
+
 const button = document.getElementById("button")
 const display = document.getElementById("display")
 const operatorButtons = document.getElementsByClassName("operators")
@@ -39,20 +44,22 @@ function operate(operator,a,b) {
     }
 }
 
-numberButtons.ForEach(button => {
+Array.from(numberButtons).ForEach(button => {
     const buttonValue = button.textContent;
-    displayElement.textContent += buttonValue;
-})
-
-operatorButtons.ForEach(button => {
-    const buttonValue = button.textContent;
-    displayElement.textContent += buttonValue;
-})
-
-let populateDisplay = function() {
-    button.addEventListener("click", () => {
-        const buttonValue = button.textContent;
+    display.textContent += buttonValue;
+    if(display) {
         display.textContent += buttonValue;
-    })
-};
+    } else {
+        console.error("Display element not found.");
+    }
+    });
 
+Array.from(operatorButtons).ForEach(button => {
+    const buttonValue = button.textContent;
+    displayElement.textContent += buttonValue;
+    if(display) {
+        display.textContent += buttonValue;
+    } else {
+        console.error("Display element not found.");
+    }
+    })
