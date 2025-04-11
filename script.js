@@ -17,20 +17,12 @@ const divide = function(a,b) {
     return a / b
 };
 
-const displayElement = document.querySelector(".display");
-const numberButtons = document.querySelectorAll(".number");
-const operatorButtons = document.querySelectorAll(".operator");
-const clearButton = document.querySelector(".clear");
-
-let firstOperand = null;
-let secondOperand = null;
-let currentOperator = null;
-
 function userDisplay(value) {
+    value.add.eventListener("click")
     displayElement.textContent = value;
 }
 
-function operate(operator, a , b) {
+function operate(operator,a,b) {
     a = Number(a);
     b = Number(b);
     switch (operator) {
@@ -45,4 +37,5 @@ function operate(operator, a , b) {
         default:
             return null;
     }
+    if ()
 }
