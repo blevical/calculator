@@ -18,21 +18,14 @@ const divide = function(a,b) {
 };
 
 const operators = [add,subtract,multiply,divide]
-
-const numbers = [];
-for (let i = 0; i <= 9; i++) {
-    numbers.push(i)
-}
-
-const button = document.querySelectorAll("button")
+const clearButton = document.querySelector(".operators button:nth-child(1)");
+const allButtons = (document.querySelectorAll("#container button"))
 const display = document.getElementById("display")
-const operatorButtons = document.getElementsByClassName("operators")
-const numberButtons = document.getElementsByClassName("numbers")
 
-function operate(operator,a,b) {
+function operate(operators,a,b) {
     a = Number(a);
     b = Number(b);
-    switch (operator) {
+    switch (operators) {
         case "+":
             return add(a,b);
         case "-":
@@ -46,29 +39,31 @@ function operate(operator,a,b) {
     }
 }
 
-function numberSelection(numberButtons) {
-    Array.from(numberButtons).forEach(button =>{
-        const buttonValue = button.textContent;
-        display.textContent += buttonValue;
-        if(display) {
+function handleButtonClick(event) {
+    const buttonValue = event.target.textContent;
+    if (display) {
         display.textContent += buttonValue;
     } else {
-        console.error("Display element not found.");
+        console.error("Cannot display.")
     }
-});
 }
 
-function operatorSelection(operatorButtons) {
-    Array.from(operatorButtons).forEach(button => {
-        const buttonValue = button.textContent;
-        display.textContent += buttonValue;
-            if(display) {
-            display.textContent += buttonValue;
-        } else {
-        console.error("Display element not found.");
-    }
+allButtons.forEach(button => {
+    button.addEventListener("click", handleButtonClick);
 });
+
+function clearDisplay() {
+    if (display) {
+        display.textContent = "";
+    } else {
+        console.error("Cannot clear display.")
+    }
 }
 
-console.log(buttonValue)
-console.log(display.textContent)
+if(clearButton) {
+    clearButton.addEventListener("click", clearDisplay);
+}
+
+function calculate() {
+    
+}
