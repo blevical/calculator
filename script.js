@@ -22,6 +22,11 @@ const clearButton = document.querySelector(".operators button:nth-child(1)");
 const allButtons = (document.querySelectorAll("#container button"))
 const display = document.getElementById("display")
 
+document.addEventListener("click: +", add)
+document.addEventListener("click: -", subtract)
+document.addEventListener("click: x", multiply)
+document.addEventListener("click /", divide)
+
 function operate(operators,a,b) {
     a = Number(a);
     b = Number(b);
@@ -42,13 +47,13 @@ function operate(operators,a,b) {
 function handleButtonClick(event) {
     const buttonValue = event.target.textContent;
     if (display) {
-        display.textContent += buttonValue;
+        display.textContent += buttonValue
     } else {
         console.error("Cannot display.")
     }
 }
 
-allButtons.forEach(button => {
+const buttonSelection = allButtons.forEach(button => {
     button.addEventListener("click", handleButtonClick);
 });
 
@@ -64,6 +69,6 @@ if(clearButton) {
     clearButton.addEventListener("click", clearDisplay);
 }
 
-function calculate() {
-    
-}
+const calculate = operate(operators)
+
+calculate();
