@@ -22,14 +22,14 @@ button {
 .numbers {
     /* sets up a calculator like structure*/
     display: grid;
-    grid-template-columns: repeat(4, 0fr);
+    grid-template-columns: repeat(5, 0fr);
     justify-content: center;
 }
 
 .operators {
     /* sets up a calculator like structure*/
     display: grid;
-    grid-template-columns: repeat(4, 0fr);
+    grid-template-columns: repeat(5, 0fr);
     justify-content: center;
 }
 
@@ -41,7 +41,7 @@ button {
     justify-content: center;
     background-color: gray;
     color: black;
-    width: 100%;
+    width: 275px;
     height: 10px;
     font-family: fantasy;
 }

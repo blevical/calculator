@@ -19,7 +19,9 @@ const divide = function(a,b) {
 
 const operators = [add,subtract,multiply,divide]
 const clearButton = document.querySelector(".operators button:nth-child(1)");
-const allButtons = (document.querySelectorAll("#container button"))
+const equalButton = document.querySelector(".operators button:nth-child(7)")
+const numberButtons = (document.querySelectorAll(".numbers button"))
+const operatorButtons = (document.querySelectorAll(".operators button"))
 const display = document.getElementById("display")
 
 document.addEventListener("click: +", add)
@@ -51,9 +53,13 @@ function handleButtonClick(event) {
     } else {
         console.error("Cannot display.")
     }
-}
+};
 
-const buttonSelection = allButtons.forEach(button => {
+const numberSelection = numberButtons.forEach(button => {
+    button.addEventListener("click", handleButtonClick);
+});
+
+const operatorSelection = operatorButtons.forEach(button => {
     button.addEventListener("click", handleButtonClick);
 });
 
@@ -63,12 +69,20 @@ function clearDisplay() {
     } else {
         console.error("Cannot clear display.")
     }
-}
+};
+
+function calculate() {
+    if (display) {
+        
+    } else {
+        console.error("Cannot Calculate.")
+    }
+};
 
 if(clearButton) {
     clearButton.addEventListener("click", clearDisplay);
 }
 
-const calculate = operate(operators)
-
-calculate();
+if(equalButton) {
+    equalButton.addEventListener("click", calculate);
+};
