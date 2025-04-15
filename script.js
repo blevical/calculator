@@ -58,7 +58,10 @@ numberButtons.forEach(button => {
 });
 
 operatorButtons.forEach(button => {
-    button.addEventListener("click", handleOperatorClick);
+    const text = button.textContent;
+    if (text !== '=' && text !== 'C') {
+        button.addEventListener("click", handleOperatorClick);
+    }
 });
 
 function handleOperatorClick(event) {
@@ -85,8 +88,8 @@ function clearDisplay() {
     }
 };
 
-function updateDisplay(value) {
-    display.textContent = value;
+function updateDisplay(result) {
+    display.textContent = result
 };
 
 if(clearButton) {
@@ -103,8 +106,6 @@ function handleEqualClick() {
         secondOperand = null;
     }
 };
-
-handleEqualClick(updateDisplay);
 
 equalButton.addEventListener("click", handleEqualClick);
 
