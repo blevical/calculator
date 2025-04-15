@@ -35,7 +35,6 @@ button {
 
 #display {
     padding: 50px;
-    border: red 15px;
     display: flex;
     flex-direction: row;
     justify-content: center;
